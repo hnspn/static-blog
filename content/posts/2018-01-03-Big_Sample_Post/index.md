@@ -1,5 +1,6 @@
 ---
 title: "Big Test"
+cover: "https://camo.githubusercontent.com/bb6bc1c473e974d4b73683f2b7d7b3d522de32f3/687474703a2f2f692e737461636b2e696d6775722e636f6d2f5331356d442e706e67"
 category: "moar"
 date: "2018-01-03"
 slug: "Big-Sample_Test"
