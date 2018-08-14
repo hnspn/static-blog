@@ -54,10 +54,11 @@ class AuthorTemplate extends React.Component {
       this.props.data.allMarkdownRemark.edges
         ? this.props.data.allMarkdownRemark.edges
         : [];
-    const authorsEdges =
-      this.props.data.allAuthorsJson && this.props.data.allAuthorsJson.edges
-        ? this.props.data.allAuthorsJson.edges
-        : [];
+    console.log('DEBUG:', this.props.data.allAuthorsJson);
+    const authorsEdges = this.props.data.allAuthorsJson.edges//
+      // this.props.data.allAuthorsJson && this.props.data.allAuthorsJson.edges
+      //   ? this.props.data.allAuthorsJson.edges
+      //   : [];
     const getAuthor = () => authorsEdges[0].node;
 
     return (
