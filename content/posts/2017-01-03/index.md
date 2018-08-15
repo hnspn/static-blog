@@ -2,6 +2,7 @@
 title: "Angels of Mist"
 cover: "https://unsplash.it/1280/900/?random?AngelsofMist"
 category: "test3"
+author: "abderahmane"
 date: "2017-01-03"
 tags:
     - cheese

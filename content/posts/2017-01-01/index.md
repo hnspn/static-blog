@@ -2,6 +2,7 @@
 title: "Bold Mage"
 cover: "https://unsplash.it/1280/500/?random?BoldMage"
 date: "2017-01-01"
+author: "abderahmane"
 category: "tech"
 tags:
     - programming
