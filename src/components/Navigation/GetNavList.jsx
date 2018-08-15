@@ -1,3 +1,4 @@
+// import React from 'react'
 // import FontIcon from "react-md/lib/FontIcons";
 import Link from "gatsby-link";
 
@@ -26,13 +27,17 @@ function GetNavList(config) {
   }
 
   NavList.push({ divider: true });
-
   NavList.push({
-    primaryText: "About",
-    // LeftIcon: <FontIcon>person</FontIcon>,
+    primaryText: "Resume",
     component: Link,
-    to: "/about/"
-  });
+    to: "/resume.pdf"
+  })
+  // NavList.push({
+  //   primaryText: "About",
+  //   // LeftIcon: <FontIcon>person</FontIcon>,
+  //   component: Link,
+  //   to: "/about/"
+  // });
   return NavList;
 }
 export default GetNavList;
