@@ -1,4 +1,4 @@
-// import React from 'react'
+import React from 'react'
 // import FontIcon from "react-md/lib/FontIcons";
 import Link from "gatsby-link";
 
@@ -30,7 +30,7 @@ function GetNavList(config) {
   NavList.push({
     primaryText: "Resume",
     component: Link,
-    to: "/resume.pdf"
+    onClick: () => {window.location = '/resume.pdf'}
   })
   // NavList.push({
   //   primaryText: "About",
