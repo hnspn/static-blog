@@ -2,4 +2,4 @@ User-agent: *
 Disallow: */tags/
 Disallow: */categories/
 
-sitemap: 
+sitemap: https://honeyspoon.me/sitemap.xml
