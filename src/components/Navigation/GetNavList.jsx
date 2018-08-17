@@ -1,6 +1,21 @@
 import React from 'react'
 // import FontIcon from "react-md/lib/FontIcons";
-import Link from "gatsby-link";
+import GatsbyLink from "gatsby-link";
+
+const Link = (props) => {
+  const { href, to, ...others } = props
+
+  if (to) {
+    return (
+      <GatsbyLink {...others} to={to} />
+    )
+  }
+
+  return (
+    <a {...others} href={href} target="_blank" />
+  )
+}
+
 
 function GetNavList(config) {
   const NavList = [
@@ -27,11 +42,20 @@ function GetNavList(config) {
   }
 
   NavList.push({ divider: true });
+
+  NavList.push({
+    primaryText: "Linkedin",
+    component: Link,
+    href: "https://www.linkedin.com/in/bouzianea/"
+  })
+
   NavList.push({
     primaryText: "Resume",
     component: Link,
-    onClick: () => {window.location = '/resume.pdf'}
+    href: "/resume.pdf"
   })
+
+
   // NavList.push({
   //   primaryText: "About",
   //   // LeftIcon: <FontIcon>person</FontIcon>,
