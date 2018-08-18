@@ -6,16 +6,14 @@ module.exports = {
   siteTitleAlt: "Honeyspoon blog", // Alternative site title for SEO.
   siteLogo:
     "/logos/logo-1024.png", // "https://haysclark.github.io/gatsby-starter-casper/logos/logo-1024.png", // Logo used for SEO and manifest. e.g. "/logos/logo-1024.png",
-  siteUrl: "https://honeyspoon.me", // Domain of your website without pathPrefix.
+  siteUrl: "https://honeyspoon.me/", // Domain of your website without pathPrefix.
   // pathPrefix: "/gatsby-starter-casper", // Prefixes all links. For cases when deployed to example.github.io/gatsby-starter-casper/.
   siteDescription:
     "I'm a software engineering student and this is my personal blog for all things tech and life related", // Website description used for RSS feeds/meta description tag.
-  siteCover:
-    "https://images.unsplash.com/photo-1423589989400-cc0270157ed0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=68a4521ac2214081b71d4000450b2098&auto=format&fit=crop&w=1950&q=80", 
-    // "https://haysclark.github.io/gatsby-starter-casper/images/blog-cover.jpg", // Optional, the cover image used in header for home page. e.g: "/images/blog-cover.jpg",
+  siteCover: "/images/site-cover.jpeg", // Optional, the cover image used in header for home page. e.g: "/images/blog-cover.jpg",
   siteNavigation: true, // If navigation is enabled the Menu button will be visible
   siteRss: "/rss.xml", // Path to the RSS file.
-  siteRssAuthor: "Casper User", // The author name used in the RSS file
+  siteRssAuthor: "Abderahmane Bouziane", // The author name used in the RSS file
   // siteFBAppID: "1825356251115265", // optional, sets the FB Application ID for using app insights
   sitePaginationLimit: 10, // The max number of posts per page.
   googleAnalyticsID: "UA-123949230-1", // GA tracking ID.
