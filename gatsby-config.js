@@ -34,7 +34,6 @@ module.exports = {
       }
     },
     "gatsby-transformer-json",
-    "gatsby-plugin-sass",
     {
       resolve: "gatsby-transformer-remark",
       options: {
