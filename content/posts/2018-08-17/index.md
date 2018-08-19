@@ -1,6 +1,6 @@
 ---
 title: "Vanilla python chat server"
-cover: "/images/vanilla-python-chat-server.png"
+cover: "https://images.pexels.com/photos/1111368/pexels-photo-1111368.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
 category: "programming"
 author: "abderahmane"
 date: "2018-08-17"
