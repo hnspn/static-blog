@@ -1,5 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
+import 'prismjs/themes/prism.css'
 import config from "../../data/SiteConfig";
 import "./index.css";
 
