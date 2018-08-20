@@ -5,8 +5,8 @@ module.exports = {
   siteTitle: "Honeyspoon.me", // Site title.
   siteTitleAlt: "Honeyspoon blog", // Alternative site title for SEO.
   siteLogo: "/logos/logo-1024.png", // "https://haysclark.github.io/gatsby-starter-casper/logos/logo-1024.png", // Logo used for SEO and manifest. e.g. "/logos/logo-1024.png",
-  siteUrl: "https://honeyspoon.me/", // Domain of your website without pathPrefix.
-  // pathPrefix: "/gatsby-starter-casper", // Prefixes all links. For cases when deployed to example.github.io/gatsby-starter-casper/.
+  siteUrl: "https://honeyspoon.me", // Domain of your website without pathPrefix.
+  pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-starter-casper/.
   siteDescription:
     "I'm a software engineering student and this is my personal blog for all things tech and life related", // Website description used for RSS feeds/meta description tag.
   siteCover: "/images/site-cover.jpeg", // Optional, the cover image used in header for home page. e.g: "/images/blog-cover.jpg",
