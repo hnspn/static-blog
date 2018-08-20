@@ -1,21 +1,16 @@
-import React from 'react'
+import React from "react";
 // import FontIcon from "react-md/lib/FontIcons";
 import GatsbyLink from "gatsby-link";
 
-const Link = (props) => {
-  const { href, to, ...others } = props
+const Link = props => {
+  const { href, to, ...others } = props;
 
   if (to) {
-    return (
-      <GatsbyLink {...others} to={to} />
-    )
+    return <GatsbyLink {...others} to={to} />;
   }
 
-  return (
-    <a {...others} href={href} target="_blank" />
-  )
-}
-
+  return <a {...others} href={href} target="_blank" />;
+};
 
 function GetNavList(config) {
   const NavList = [
@@ -47,14 +42,13 @@ function GetNavList(config) {
     primaryText: "Linkedin",
     component: Link,
     href: "https://www.linkedin.com/in/bouzianea/"
-  })
+  });
 
   NavList.push({
     primaryText: "Resume",
     component: Link,
     href: "/resume.pdf"
-  })
-
+  });
 
   // NavList.push({
   //   primaryText: "About",
