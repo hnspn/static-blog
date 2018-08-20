@@ -68,7 +68,12 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-twitter",
-    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        exclude: [`/dev-404-page`, `/404`, `/offline-plugin-app-shell-fallback`]
+      }
+    },
     {
       resolve: "gatsby-plugin-manifest",
       options: {
