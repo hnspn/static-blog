@@ -45,16 +45,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     const categoryPage = path.resolve("src/templates/category.jsx");
     const authorPage = path.resolve("src/templates/author.jsx");
 
-    if (
-      !fs.existsSync(
-        path.resolve(`content/${siteConfig.blogAuthorDir}/authors/`)
-      )
-    ) {
-      reject(
-        "The 'authors' folder is missing within the 'blogAuthorDir' folder."
-      );
-    }
-
     resolve(
       graphql(
         `
