@@ -33,7 +33,27 @@ module.exports = {
         path: `${__dirname}/content/${config.blogAuthorDir}`
       }
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "vegetables",
+        path: `${__dirname}/content/${config.blogVegetableDir}`
+      }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "sketches",
+        path: `${__dirname}/content/${config.blogSketchDir}`
+      }
+    },
     "gatsby-transformer-json",
+    {
+      resolve: `gatsby-transformer-code`,
+      options: {
+        name: `sketches`,
+      },
+    },
     {
       resolve: "gatsby-transformer-remark",
       options: {

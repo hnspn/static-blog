@@ -27,6 +27,7 @@
     "gatsby-remark-prismjs": "next",
     "gatsby-remark-responsive-iframe": "^1.4.20",
     "gatsby-source-filesystem": "^1.5.39",
+    "gatsby-transformer-code": "^0.1.0",
     "gatsby-transformer-json": "^1.0.14",
     "gatsby-transformer-remark": "^1.7.44",
     "lodash": "^4.17.10",

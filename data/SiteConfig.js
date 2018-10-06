@@ -1,6 +1,8 @@
 module.exports = {
   blogPostDir: "posts", // The name of directory that contains your posts.
   blogAuthorDir: "authors", // The name of directory that contains your 'authors' folder.
+  blogVegetableDir: "vegetables", // The name of directory that contains your 'authors' folder.
+  blogSketchDir: "sketches",
   blogAuthorId: "abderahmane", // The default and fallback author ID used for blog posts without a defined author.
   siteTitle: "Honeyspoon.me", // Site title.
   siteTitleAlt: "Honeyspoon blog", // Alternative site title for SEO.
