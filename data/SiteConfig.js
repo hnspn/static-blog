@@ -3,7 +3,7 @@ module.exports = {
   blogAuthorDir: "authors", // The name of directory that contains your 'authors' folder.
   blogVegetableDir: "vegetables", // The name of directory that contains your 'authors' folder.
   blogSketchDir: "sketches",
-  blogAuthorId: "abderahmane", // The default and fallback author ID used for blog posts without a defined author.
+  blogAuthorUid: "abderahmane", // The default and fallback author ID used for blog posts without a defined author.
   siteTitle: "Honeyspoon.me", // Site title.
   siteTitleAlt: "Honeyspoon blog", // Alternative site title for SEO.
   siteLogo: "/logos/logo-1024.png", // "https://haysclark.github.io/gatsby-starter-casper/logos/logo-1024.png", // Logo used for SEO and manifest. e.g. "/logos/logo-1024.png",
@@ -36,6 +36,16 @@ module.exports = {
       label: "Twitter",
       url: "https://twitter.com/hnspn3",
       iconClassName: "fa fa-twitter" // Disabled, see Navigation.jsx
+    },
+    {
+      label: "Linkedin",
+      url: "https://www.linkedin.com/in/bouzianea/",
+      iconClassName: "fa fa-linkedin" // Disabled, see Navigation.jsx
+    },
+    {
+      label: "Resume",
+      url: "/resume.pdf",
+      iconClassName: "fa fa-file-text-o" // Disabled, see Navigation.jsx
     },
     {
       label: "Email",

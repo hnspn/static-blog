@@ -23,9 +23,10 @@ collections:
     label: "Authors"
     folder: "content/authors"
     create: true
-    slug: "{{id}}.json"
-    fields:
-      - {label: "ID", name: "id", widget: "string"}
+    slug: "{{uid}}.json"
+    fields:      
+      - {label: "title", name: "title", widget: "string", required: false}
+      - {label: "UID", name: "uid", widget: "string"}
       - {label: "Name", name: "name", widget: "string"}
       - {label: "Profile picture", name: "image", widget: "image"}
       - {label: "Website", name: "url", widget: "string"}
@@ -35,12 +36,21 @@ collections:
     label: "Pages"
     files:
       - file: "content/pages/about.md"
+        name: "about"
+        label: "About page"
+        fields:
+          - {label: "Description", name: "description", widget: "string"}
       - file: "content/pages/index.md"
+        name: "index"
+        label: "Index page"
+        fields:
+          - {label: "Description", name: "description", widget: "string"}
   - name: "config"
     label: "Site Configuration"
     files:
       - name: "siteconfig"
         file: "data/SiteConfig.js"
+        label: "Website Configuration"
         fields:
           - {label: "Description", name: "siteDescription", widget: "string"}
 
