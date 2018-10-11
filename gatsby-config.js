@@ -91,7 +91,11 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
-        exclude: [`/dev-404-page`, `/404`, `/offline-plugin-app-shell-fallback`]
+        exclude: [
+          `/dev-404-page`,
+          `/404`,
+          // `/offline-plugin-app-shell-fallback`
+        ]
       }
     },
     {
@@ -118,8 +122,13 @@ module.exports = {
         ]
       }
     },
-    "gatsby-plugin-offline",
-    "gatsby-plugin-netlify-cms",
+    // "gatsby-plugin-offline",
+    {
+      resolve: 'gatsby-plugin-netlify-cms',
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+      },
+    },
     {
       resolve: "gatsby-plugin-feed",
       options: {

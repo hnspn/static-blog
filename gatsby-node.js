@@ -1,7 +1,7 @@
 const path = require("path");
 const _ = require("lodash");
 const fs = require("fs");
-const webpackLodashPlugin = require("lodash-webpack-plugin");
+const LodashModuleReplacementPlugin = require("lodash-webpack-plugin");
 const siteConfig = require("./data/SiteConfig");
 const {
   createPaginationPages,
@@ -175,7 +175,9 @@ exports.createPages = ({ graphql, actions }) => {
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
   if (stage === 'build-javascript') {
     actions.setWebpackConfig({
-        plugins: [webpackLodashPlugin],
+        plugins: [
+          new LodashModuleReplacementPlugin
+        ],
     })
   }
 };
