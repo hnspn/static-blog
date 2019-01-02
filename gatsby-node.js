@@ -41,6 +41,7 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve, reject) => {
     const indexPage = path.resolve("src/templates/index.jsx");
     const postPage = path.resolve("src/templates/post.jsx");
+    const sketchPage = path.resolve("src/templates/sketch.jsx");
     const tagPage = path.resolve("src/templates/tag.jsx");
     const categoryPage = path.resolve("src/templates/category.jsx");
     const authorPage = path.resolve("src/templates/author.jsx");
@@ -81,6 +82,13 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors);
         }
 
+        const posts = result.data.allMarkdownRemark.edges.filter(
+          edge => edge.node.frontmatter.category === "post"
+        );
+        const sketches = result.data.allMarkdownRemark.edges.filter(
+          edge => edge.node.frontmatter.category === "sketch"
+        );
+
         // Creates Index page
         createPaginationPages({
           createPage,
@@ -89,10 +97,24 @@ exports.createPages = ({ graphql, actions }) => {
           limit: siteConfig.sitePaginationLimit
         });
 
+        // Creates Sketches
+        createLinkedPages({
+          createPage,
+          edges: sketches,
+          component: sketchPage,
+          edgeParser: edge => ({
+            path: edge.node.fields.slug,
+            context: {
+              slug: edge.node.fields.slug
+            }
+          }),
+          circular: true
+        });
+
         // Creates Posts
         createLinkedPages({
           createPage,
-          edges: result.data.allMarkdownRemark.edges,
+          edges: posts,
           component: postPage,
           edgeParser: edge => ({
             path: edge.node.fields.slug,
@@ -107,6 +129,7 @@ exports.createPages = ({ graphql, actions }) => {
         const tagMap = new Map();
         const categorySet = new Set();
         const authorSet = new Set();
+
         authorSet.add(siteConfig.blogAuthorUid);
 
         result.data.allMarkdownRemark.edges.forEach(edge => {
@@ -172,12 +195,25 @@ exports.createPages = ({ graphql, actions }) => {
   });
 };
 
-exports.onCreateWebpackConfig = ({ stage, actions }) => {
-  if (stage === 'build-javascript') {
+exports.onCreateWebpackConfig = ({ stage, actions, loaders }) => {
+  if (stage === "build-html") {
     actions.setWebpackConfig({
-        plugins: [
-          new LodashModuleReplacementPlugin
+      module: {
+        rules: [
+          {
+            test: /p5/,
+            use: loaders.null(),
+          },
         ],
-    })
+      }
+    });
   }
+
+  if (stage === "build-javascript") {
+    actions.setWebpackConfig({
+      plugins: [new LodashModuleReplacementPlugin()]
+    });
+  }
+
+  
 };
