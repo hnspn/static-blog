@@ -51,9 +51,8 @@ class SketchTemplate extends React.Component {
     menuOpen: false
   };
 
-  constructor(props) {
-    super(props);
-    import(  `../../content/sketches/${props['*']}/index`)
+  componentDidMount() {
+    import(  `../../content/sketches/${this.props['*']}/index`)
     .then((res) => {this.setState({sketch: res.default})});
   }
 
