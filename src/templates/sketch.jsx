@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from 'gatsby';
-import P5Wrapper from 'react-p5-wrapper';
 import Helmet from "react-helmet";
+import P5Wrapper from '../components/P5/P5';
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import MainHeader from "../components/MainHeader/MainHeader";
@@ -52,7 +52,8 @@ class SketchTemplate extends React.Component {
   };
 
   componentDidMount() {
-    import(  `../../content/sketches/${this.props['*']}/index`)
+    
+    import(`../../content/sketches/${this.props['*']}/index`)
     .then((res) => {this.setState({sketch: res.default})});
   }
 
@@ -79,15 +80,15 @@ class SketchTemplate extends React.Component {
   };
 
   render() {
-    console.log('render');
-    const { location, data } = this.props;
-    const { slug, next, prev } = this.props.pageContext;
-    const postNode = this.props.data.markdownRemark;
+    const { location, data, pageContext } = this.props;
+    const { menuOpen, sketch } = this.state;
+    const { slug, next, prev } = pageContext;
+    const postNode = data.markdownRemark;
     const post = parsePost(postNode.frontmatter, slug);
     const { cover, title, date, author, tags } = post;
     const className = post.post_class ? post.post_class : "post";
     const authorData = AuthorModel.getAuthor(
-      this.props.data.authors.edges,
+      data.authors.edges,
       author,
       config.blogAuthorUid
     );
@@ -95,8 +96,8 @@ class SketchTemplate extends React.Component {
     const getPrevData = () => (prev ? formatReadNext(data.prev) : null);
 
     return (
-      <Layout location={this.props.location}>
-        <Drawer className="post-template" isOpen={this.state.menuOpen}>
+      <Layout location={location}>
+        <Drawer className="post-template" isOpen={menuOpen}>
           <Helmet>
             <title>{`${post.title} | ${config.siteTitle}`}</title>
           </Helmet>
@@ -125,7 +126,7 @@ class SketchTemplate extends React.Component {
                   </section>
                 </PostHeader>
                 
-                {this.state.sketch ? (<P5Wrapper sketch={this.state.sketch} />) : <h3>Loading sketch...</h3>}
+                {sketch ? (<P5Wrapper dom sound sketch={sketch} />) : <h3>Loading sketch...</h3>}
 
                 <section
                   className="post-content"

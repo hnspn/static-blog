@@ -1,6 +1,3 @@
-import ("p5").catch(() => {console.log('only necessary if you are using npm without react-p5-wrapper')});
-import ("p5/lib/addons/p5.dom").catch(() => {console.log('only add this if you are using npm')});
-
 /* eslint no-param-reassign: 0 */  // 
 /* eslint no-console: 0 */  //
 /* eslint no-plusplus: 0 */  //
@@ -20,14 +17,25 @@ export default function s(sk) {
 
   let nbBalls;
 
+  const waitingToRunningTransition = () => {
+    nbBalls = parseInt(nbBallsInput.value(), 10);
+    state = STATES.running;
+    sk.frameRate(60);
+  }
+
+  const step = () => {
+    const xStep = width / nbBalls;
+    const yStep = height / nbBalls;
+    for (let index = 0; index < nbBalls; index++) {
+      sk.ellipse(index * xStep, index * yStep,radius, radius);
+    }
+  }
+
   sk.setup = () => {
     sk.createCanvas(width, height);
     nbBallsInput = sk.createInput();
     startButton = sk.createButton('start');
-    startButton.mousePressed(() => {
-      nbBalls = parseInt(nbBallsInput.value(), 10);
-      state = STATES.running;
-    })
+    startButton.mousePressed(waitingToRunningTransition);
     sk.frameRate(1);
   }
 
@@ -35,8 +43,6 @@ export default function s(sk) {
     sk.background(0);
     switch (state) {
       case STATES.waiting_for_input:
-        
-        sk.frameRate(60);
         break;
       case STATES.running:
         step();
@@ -47,12 +53,4 @@ export default function s(sk) {
     }
   }
 
-  const step = () => {
-    const xStep = width / nbBalls;
-    const yStep = height / nbBalls;
-    for (let index = 0; index < nbBalls; index++) {
-      sk.ellipse(index * xStep, index * yStep,radius, radius);
-    }
-  }
 }
-
