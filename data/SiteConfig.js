@@ -21,7 +21,7 @@ module.exports = {
   disqusShortname: "https-honeyspoon-me", // enables Disqus comments, visually deviates from original Casper theme.
   siteSocialUrls: [
     "https://github.com/hnspn",
-    "https://twitter.com/hnspn3",
+    "https://twitter.com/honeyspoon3",
     "mailto:abderahmane.bouziane@polymtl.ca"
   ],
   postDefaultCategoryID: "Tech", // Default category for posts.
